@@ -2,13 +2,14 @@
 
 name: cd
 on:
+  check_run:
+    types:
+      - completed
   push:
     branches: master
 # on:
 #   workflow_dispatch:
-  check_run:
-    types:
-      - completed    
+  
     
 jobs:
   validate:
