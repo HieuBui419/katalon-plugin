@@ -27,6 +27,10 @@ jobs:
         uses: entimaniac/read-pom-version-action@1.0.0
         id: getVersion
         
+      - name: Check var
+        run: |
+          echo "verify: ${{ steps.verify-ci-status.outputs.result }}"
+          
       - name: Release Drafter
         uses: release-drafter/release-drafter@v5
         if: steps.verify-ci-status.outputs.result == 'success'
