@@ -1,9 +1,14 @@
 # Note: additional setup is required, see https://www.jenkins.io/redirect/continuous-delivery-of-plugins
 
 name: cd
+# on:
+#   push:
+#     branches: master
 on:
-  push:
-    branches: master
+  workflow_dispatch:
+  check_run:
+    types:
+      - completed    
     
 jobs:
   validate:
